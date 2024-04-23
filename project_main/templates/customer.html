@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Interface</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .book-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .book {
+            width: calc(33.33% - 20px);
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .book img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .book h3 {
+            margin-top: 10px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .book p {
+            font-size: 14px;
+            margin-top: 5px;
+            text-align: center;
+        }
+
+        .book button {
+            display: block;
+            margin: 10px auto 0;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .book button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Customer Interface</h1>
+        
+        
+        <h2>Available Books</h2>
+        <div class="book-container">
+            <div class="book">
+                <img src="{% static 'image/book1.jpeg' %}" alt="Book 1">
+                <h3>Book 1</h3>
+                <p>Author: Author 1</p>
+                <p>Number of Copies: 5</p>
+                <button>Borrow</button>
+            </div>
+            <div class="book">
+                <img src="{% static 'image/book2.jpeg' %}" alt="Book 2">
+                <h3>Book 2</h3>
+                <p>Author: Author 2</p>
+                <p>Number of Copies: 3</p>
+                <button>Borrow</button>
+            </div>
+            
+        </div>
+        
+        <!-- Display borrowed books -->
+        <h2>Borrowed Books</h2>
+        <div class="book-container">
+            <div class="book">
+                <img src="{% static 'image/book3.jpeg' %}" alt="Book 3">
+                <h3>Book 3</h3>
+                <p>Author: Author 3</p>
+                <p>Due Date: 2024-04-30</p>
+                <button>Return</button>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

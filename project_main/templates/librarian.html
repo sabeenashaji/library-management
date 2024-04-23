@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Librarian Interface</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        textarea,
+        select {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            width: calc(100% - 22px);
+        }
+
+        button[type="submit"] {
+            background-color: #28a745;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f0f0f0;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Librarian Interface</h1>
+        
+        <!-- Add form to add new author -->
+        <h2>Add New Author</h2>
+        <form id="add-author-form" style="text-align: center;">
+            <label for="author-name">Name:</label>
+            <input type="text" id="author-name" name="author-name" required><br>
+            <label for="author-biography">Biography:</label>
+            <textarea id="author-biography" name="author-biography" rows="4" required></textarea><br>
+            <button type="submit">Add Author</button>
+        </form>
+        
+        <!-- Add form to add new book -->
+        <h2>Add New Book</h2>
+        <form id="add-book-form" style="text-align: center;">
+            <label for="book-name">Name:</label>
+            <input type="text" id="book-name" name="book-name" required><br>
+            <label for="book-image">Image:</label>
+            <input type="file" id="book-image" name="book-image" accept="image/*" required><br>
+            <label for="book-author">Author:</label>
+            <select id="book-author" name="book-author" required>
+                <!-- Options populated dynamically from backend -->
+                <option value="">Select Author</option>
+                <!-- Example: <option value="author_id">Author Name</option> -->
+            </select><br>
+            <label for="num-copies">Number of Copies:</label>
+            <input type="number" id="num-copies" name="num-copies" min="1" required><br>
+            <button type="submit">Add Book</button>
+        </form>
+        
+        <!-- Table to display list of books -->
+        <h2>List of Books</h2>
+        <table id="book-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Image</th>
+                    <th>Author</th>
+                    <th>Number of Copies</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Table rows populated dynamically from backend -->
+                <!-- Example: <tr><td>Book Name</td><td>Book Image</td><td>Author Name</td><td>Number of Copies</td><td><button>Edit</button><button>Delete</button></td></tr> -->
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
